@@ -9,5 +9,6 @@ class Board
   end
 
   def bullseye
+    
   end
 end
