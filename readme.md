@@ -14,7 +14,7 @@
   * output: expect(board.bullseye).to(eq([1, 2]))
 2. The method returns multiple positions that are closest to the bullseye (closest first, 2nd closest second, etc.)
   * inputs: board = Board.new(3, [[3, 4], [2, -2], [1, 2]], 2)
-  * output: expect(bullseye).to(eq([1, 2]<Return>[2, -2]))
+  * output: expect(bullseye).to(eq([[1, 2], [2, -2]]))
 
 
 ### Rspec results
