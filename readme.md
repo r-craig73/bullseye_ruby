@@ -18,7 +18,7 @@
 
 
 ### Rspec results
-![alt-text](img/rspec-screenshot.png "Screenshot Rspec results, coming soon")
+![alt-text](img/rspec_screenshot.png "Screenshot Rspec results, coming soon")
 
 ## Setup/Installation Requirements
 ### Clone repository.
