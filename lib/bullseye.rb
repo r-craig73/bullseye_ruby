@@ -13,14 +13,14 @@ class Board
     locations = @positions
     near_bullseye = @closest_targets
 
-    # add new_array array to square each location element [x^2]
-    new_array = []
+    # add squares array to square each location element [x^2]
+    squares = []
     i = 0
     while i < darts
       j = 0
       while j < 2
         z = locations[i][j]**2
-        new_array.push(z)
+        squares.push(z)
         j += 1
       end
       i += 1
@@ -30,8 +30,8 @@ class Board
     radius = []
     k = 0
     while k < darts
-      w = new_array[k * 2]
-      x = new_array[k * 2 + 1]
+      w = squares[k * 2]
+      x = squares[k * 2 + 1]
       distance = Math.sqrt(w + x)
       radius.push(distance)
 
@@ -40,16 +40,20 @@ class Board
       k += 1
     end
 
-    # spots = []
+    # sort each location by ascending radius [x, y, radius]
+    locations.sort_by!(&:last)
+    spots = []
     p = 0
     while p < near_bullseye
-      # sort each location by ascending radius [x, y, radius]
-      locations.sort_by!(&:last)
       close_targets = locations[p]
       close_targets.pop
-      close_targets.push
+      if near_bullseye == 1
+        return close_targets
+      else
+        spots.push(close_targets)
+      end
       p += 1
     end
-    close_targets
+    spots
   end
 end
