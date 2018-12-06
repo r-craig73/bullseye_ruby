@@ -47,11 +47,8 @@ class Board
     while p < near_bullseye
       close_targets = locations[p]
       close_targets.pop
-      if near_bullseye == 1
-        return close_targets
-      else
-        spots.push(close_targets)
-      end
+      return close_targets if near_bullseye == 1
+      spots.push(close_targets)
       p += 1
     end
     spots
